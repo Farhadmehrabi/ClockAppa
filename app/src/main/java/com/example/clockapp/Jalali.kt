@@ -1,6 +1,6 @@
 package com.example.clockapp
 
-import android.icu.util.PersianCalendar
+import com.ibm.icu.util.PersianCalendar
 import java.util.Calendar
 import java.util.Date
 
@@ -28,9 +28,9 @@ object Jalali {
     fun format(date: Date): String {
         val pc = PersianCalendar()
         pc.time = date
-        val year = pc.get(android.icu.util.Calendar.YEAR)
-        val month = pc.get(android.icu.util.Calendar.MONTH)
-        val day = pc.get(android.icu.util.Calendar.DAY_OF_MONTH)
+        val year = pc.get(com.ibm.icu.util.Calendar.YEAR)
+        val month = pc.get(com.ibm.icu.util.Calendar.MONTH)
+        val day = pc.get(com.ibm.icu.util.Calendar.DAY_OF_MONTH)
 
         val g = Calendar.getInstance().apply { time = date }
         val weekday = weekdays[g.get(Calendar.DAY_OF_WEEK)].orEmpty()
